@@ -1,10 +1,3 @@
-//define pixelformat of windows bitmap, notice the unusual ordering of colors
-typedef struct {
-	unsigned char B;
-	unsigned char G;
-	unsigned char R;
-} pixel;
-
 #include <stdlib.h>
 #include <fcntl.h>
 #include <unistd.h>
@@ -15,9 +8,13 @@ typedef struct {
 #include <string.h>
 #include "qrcodegen.c"
 
+typedef struct {
+	unsigned char B;
+	unsigned char G;
+	unsigned char R;
+} pixel;
 
 static int makeQR(const char *text,uint8_t qrcode[]);
-//static void printQr(const uint8_t qrcode[],int *dimensio);
 void makeBMP(uint8_t qrcode[],int mida,char file[]);
 void takeTextFile(char *fileName, char []);
 
